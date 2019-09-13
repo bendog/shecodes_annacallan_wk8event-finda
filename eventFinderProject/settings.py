@@ -30,7 +30,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
+
+
 INSTALLED_APPS = [
+    'crispy_forms',
+    'users.apps.UsersConfig',
     'eventFinderApp.apps.EventfinderappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = '/event-finder'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +65,7 @@ ROOT_URLCONF = 'eventFinderProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')),],   
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'eventFinderProject.wsgi.application'
 
 
@@ -77,9 +88,9 @@ WSGI_APPLICATION = 'eventFinderProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'freeeventfinder', # you will need to create this db
-        'USER': '', # enter your user name here
-        'PASSWORD': '',
+        'NAME': 'eventproject',
+        'USER': 'postgres',
+        'PASSWORD': 'Rastybear84',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -122,3 +133,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
