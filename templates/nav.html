@@ -1,0 +1,15 @@
+<nav>
+    <a href="{% url 'eventFinderApp:index' %}">Home</a>
+    <a href="{% url 'eventFinderApp:account' %}">My Account</a>
+
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}</p>
+        <p><a href="{% url 'eventFinderApp:logout' %}">Logout</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <p><a href="{% url 'eventFinderApp:login' %}">Login</a></p>
+        <p><a href="{% url 'users:register' %}">Register</a></p>
+
+    {% endif %}
+</nav>
+

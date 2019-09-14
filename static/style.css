@@ -30,17 +30,33 @@ nav a {
 
 a {
     color: #008080;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color:#008080;
+    color: #ffffff;
+}
+
+.eventbutton {
+    color: #ffffff;
+    text-align: center;
 }
 
 #new-event {
-    width: 100%;
-    background-color:#008080;
-    color: #fff;
+    display: flex;
+    width: 40%;
+    background-color: #008080;
     border: 1px solid #008080;
     border-radius: 5px;
     font-size: 1.5rem;
     height: 50px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 #new-event:hover {

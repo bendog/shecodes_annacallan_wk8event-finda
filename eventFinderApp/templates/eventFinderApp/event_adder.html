@@ -1,3 +1,8 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
 <h1>New Event adder</h1>
 <h2>Add details of your new event here</h2>
 
@@ -10,5 +15,9 @@
     <p> {{ event.title }}</p>
     <input type="radio" name="title" value="{{ event.id }}">
     <label for=title>What the hell am I doing?</label><br>
-    <input type="submit" value="Submit">
+    <button>
+        <input type="submit" value="Submit">
+    </button>
 </form>
+
+{% endblock %}

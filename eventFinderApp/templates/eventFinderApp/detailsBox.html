@@ -1,3 +1,7 @@
+
+
+{% block content %}
+
 <div class="details-box">
     <a href="{% url 'eventFinderApp:event' event.id %}">
         <p>{{ event.title }}</p>
@@ -6,3 +10,5 @@
         <p>{{ event.start_time }}</p>
     </a>
 </div>
+
+{% endblock %}

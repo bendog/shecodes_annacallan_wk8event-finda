@@ -1,8 +1,17 @@
-<form method="post" novalidate>
-    {% csrf_token %}
-    {% load crispy_forms_tags %}
-    {{form|crispy}}
-    <!-- {{ form.as_p }} -->
-    <button type="submit" value="Update" class="btn btn-primary">Register</button>
-  </form>
+
   
+
+{% extends "base.html" %}
+{% block content %}
+
+<p>Hi, sign up to Scrounge Master to find fabulous freebies!</p>
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  {% load crispy_forms_tags %}
+  {{form|crispy}}
+  <!-- {{ form.as_p }} -->
+  <button type="submit" value="Update" class="btn btn-primary">Register</button>
+</form>
+
+{% endblock %}
