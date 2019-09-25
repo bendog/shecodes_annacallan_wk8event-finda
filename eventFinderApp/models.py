@@ -1,6 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
-from django.contrib.auth.models import User
+
 
 
 class Category(models.Model):
@@ -9,13 +9,14 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     venue = models.CharField(max_length=200, default = '')
     start_time = models.DateTimeField('start time and date')
     end_time = models.DateTimeField('end time and date')
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField('Category')
 
     def __str__(self):
         return self.title

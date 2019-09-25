@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.views import generic
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Event, Category
 from .forms import NewEventForm
 #from django.views.generic.edit import CreateView
@@ -45,8 +46,8 @@ def get_new_event(request):
     return render(request, 'eventFinderApp/event_adder.html', {'form': form})
 
 
-def account(request):
-    return render(request, 'eventFinderApp/account.html')
-
 def thanks(request):
     return render(request, 'eventFinderApp/thanks.html')
+
+
+
