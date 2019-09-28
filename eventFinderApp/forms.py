@@ -2,20 +2,22 @@
 import datetime
 
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, SplitDateTimeField
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 from .models import Event, Category
+from django.contrib.admin import widgets
+
 
     
 class NewEventForm(ModelForm):
+    start_time = SplitDateTimeField(widget=widgets.AdminSplitDateTime())
+    end_time = SplitDateTimeField(widget=widgets.AdminSplitDateTime())
+        
     class Meta:
         model = Event
         fields = ['title', 'location', 'venue', 'start_time', 'end_time']
-    # event_date = forms.DateTimeField(help_text="Enter a date and start time for the event")
-    # event_title = forms.CharField(max_length=200, help_text ='Enter a title for your event')
-
-        
+        exclude =['host']
 
     def clean_event_date(self):
         data = self.cleaned_data['start_time']
@@ -35,7 +37,9 @@ class NewEventForm(ModelForm):
     def save_new_event(request):
         form= NewEventForm(request.POST or None)
         if form.is_valid():
-            form.save()
+            event = NewEventForm.save(comit=False)
+            event.host = request.user
+            NewEventform.save()
   
         context= {'form': form }
         return render(request, 'index.html', context)

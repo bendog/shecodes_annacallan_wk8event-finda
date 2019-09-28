@@ -3,11 +3,11 @@
     
     {% if user.is_authenticated %}
         <p>Hi {{ user.username }}</p>
-        <p><a href="{% url 'users:logout' %}">Logout</a></p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
         <a href="{% url 'users:account' %}">My Account</a>
     {% else %}
         <p>You are not logged in</p>
-        <p><a href="{% url 'eventFinderApp:login' %}">Login</a></p>
+        <p><a href="{% url 'login' %}">Login</a></p>
         <p><a href="{% url 'users:register' %}">Register</a></p>
 
     {% endif %}

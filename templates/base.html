@@ -7,9 +7,14 @@
         <meta charset="utf-8">
         <title>EventFinda</title>
         <meta name="description" content="">
-        <meta name="author" content="Hayley van Waas">
+        <meta name="author" content="Anna Callan">
+        <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+        <script type="text/javascript" src="{% static '/admin/js/core.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static '/admin/css/widgets.css' %}">
+        <style>
+            .calendar>table>caption{caption-side:unset}
+        </style><!--caption fix for bootstrap4-->
         <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
-        <!-- <link rel="stylesheet" type="text/css" href="{% static 'eventFinderApp/style.css' %}"> -->
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
 

@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from eventFinderApp.models import Event
+
+
 
 class CustomUser(AbstractUser):
   # add additional fields in here
     events_attending = models.ManyToManyField('eventFinderApp.Event')
+    username = models.CharField(max_length=100, unique=True)
+    email = models.CharField(max_length=100)
 
 
 

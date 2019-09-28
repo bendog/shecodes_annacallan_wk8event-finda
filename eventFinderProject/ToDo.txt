@@ -1,0 +1,10 @@
+Things I need to do on project:
+
+
+4. Update event model
+4. Add event host (what type of relationship??)
+5. Add ability to delete users
+6. Filter for categories
+7. remove the what the hell am I doing button
+8. Date time widget??
+9. Add categories to event adder form

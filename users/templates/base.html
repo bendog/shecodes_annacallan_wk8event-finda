@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}
     <p>Hi {{ user.username }}</p>
-    <p><a href="{% url 'logout' %}">logout</a></p>
+    <p><a href="{% url 'user:logout' %}">logout</a></p>
 {% else %}
-    <p><a href="{% url 'login' %}">login</a></p>
+    <p><a href="{% url 'user:login' %}">login</a></p>
 {% endif %}

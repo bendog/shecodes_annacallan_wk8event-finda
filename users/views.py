@@ -10,9 +10,13 @@ class Register(generic.CreateView):
 
 
 def account(request):
-    return render(request, 'users/account.html')
+    return render(request, 'account.html')
 
 def logout(request):
-    return render(request, 'users/logout.html')
+    
+    return render(request, 'logout.html')
+
+# def login(request):
+#     return render(request, 'registration/login.html')
 
 

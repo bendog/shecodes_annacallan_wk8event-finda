@@ -1,5 +1,9 @@
 from django.db import models
 from django.forms import ModelForm
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 
@@ -17,6 +21,7 @@ class Event(models.Model):
     start_time = models.DateTimeField('start time and date')
     end_time = models.DateTimeField('end time and date')
     categories = models.ManyToManyField('Category')
+    host = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events',default=1)
 
     def __str__(self):
         return self.title

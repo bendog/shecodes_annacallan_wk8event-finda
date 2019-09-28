@@ -11,10 +11,9 @@
     {% csrf_token %}
     <!-- {{ form.as_p }} -->
     {% load crispy_forms_tags %}
+    {{ form.media }}
     {{form|crispy}}
     <p> {{ event.title }}</p>
-    <input type="radio" name="title" value="{{ event.id }}">
-    <label for=title>What the hell am I doing?</label><br>
     <button>
         <input type="submit" value="Submit">
     </button>
