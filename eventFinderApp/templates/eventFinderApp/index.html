@@ -7,12 +7,18 @@
     </button>
     <h3>Hey scroungers, see what's on!</h3>
 
+    <div class="container">
+        <form method ="GET">
+            {{filter.form}}
+            <button type ="submit" class="btn searchbutton">Search</button>
+        </form>
     {% if events_list %}
-        {% for event in events_list %}
+        {% for event in filter.qs %}
             {% include "./detailsBox.html" with event=event %}
         {% endfor %}
     {% else %}
         <p>No events are available.</p>
     {% endif %}
-
+    <a href="{% url 'eventFinderApp:index' %}">Show All Events</a>
+    </div>
 {% endblock %}
