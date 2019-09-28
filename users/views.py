@@ -3,20 +3,21 @@ from django.urls import reverse_lazy
 from django.views import generic
 from .forms import CustomUserCreationForm
 
+
 class Register(generic.CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'registration/register.html'
+    success_url = reverse_lazy("login")
+    template_name = "registration/register.html"
 
 
 def account(request):
-    return render(request, 'account.html')
+    return render(request, "account.html")
+
 
 def logout(request):
-    
-    return render(request, 'logout.html')
+
+    return render(request, "logout.html")
+
 
 # def login(request):
 #     return render(request, 'registration/login.html')
-
-
